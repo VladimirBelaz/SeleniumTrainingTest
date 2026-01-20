@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter;
 public class SeleniumTrainingTest {
 
     private static final Logger logger = LogManager.getLogger(SeleniumTrainingTest.class);
-    private static final String BASE_URL = "https://otus.home.kartushin.su/training.html";
+    private static final String BASE_URL =  System.getenv("BASE_URL");;
     private WebDriver driver;
 
     @BeforeAll
