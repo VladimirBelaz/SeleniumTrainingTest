@@ -7,7 +7,37 @@
     <groupId>org.example</groupId>
     <artifactId>untitled</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <profiles>
+        <profile>
+            <id>local</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <test.base.url>https://otus.home.kartushin.su/training.html</test.base.url>
+                <test.browser>chrome</test.browser>
+                <test.headless>false</test.headless>
+            </properties>
+        </profile>
 
+        <profile>
+            <id>dev</id>
+            <properties>
+                <test.base.url>https://dev-otus.example.com/training.html</test.base.url>
+                <test.browser>chrome</test.browser>
+                <test.headless>true</test.headless>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>staging</id>
+            <properties>
+                <test.base.url>https://staging-otus.example.com/training.html</test.base.url>
+                <test.browser>chrome</test.browser>
+                <test.headless>true</test.headless>
+            </properties>
+        </profile>
+    </profiles>
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
